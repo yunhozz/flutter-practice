@@ -1,37 +1,72 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
+// stless
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+      home: Scaffold(
+        // 상단 레이아웃
+        appBar: AppBar(
+          title: Text('MyApp'),
+          centerTitle: false,
+          backgroundColor: Colors.blue,
+          leading: Icon(Icons.star),
+          actions: const [ // 우측 아이콘
+            Icon(Icons.face),
+            Icon(Icons.score)
+          ],
+        ),
+        // 중단 레이아웃
+        body: Align(
+          alignment: Alignment.center,
+          child: Column( // Column : 세로 배치, Row : 가로 배치
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly, // 정축 정렬
+            crossAxisAlignment: CrossAxisAlignment.center, // 반대축 정렬
+            children: [
+              Text(
+                'contact practice',
+                style: TextStyle(fontSize: 30, letterSpacing: 5, fontWeight: FontWeight.w700),
+              ),
+              Icon(Icons.star, size: 30),
+              Image(image: AssetImage('assets/test_image.jpeg')),
+              Center(
+                child: Container(
+                  width: 100,
+                  height: 50,
+                  // color: Colors.blue,
+                  margin: EdgeInsets.all(20), // 바깥쪽 여백
+                  padding: EdgeInsets.fromLTRB(1, 2, 3, 4), // 안쪽 여백
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black),
+                  ),
+                  child: TextButton( // TextButton, IconButton, ElevatedButton
+                    onPressed: (){},
+                    style: ButtonStyle(iconColor: WidgetStateProperty.all(Colors.transparent)),
+                    child: Text('test'),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        // 하단 레이아웃
+        bottomNavigationBar: BottomAppBar(
+          child: SizedBox(
+            height: 70,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: const [
+                Icon(Icons.phone),
+                Icon(Icons.message),
+                Icon(Icons.contact_page),
+              ],
+            ),
+          ),
+        ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -122,4 +157,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+}
+
+void main() {
+  runApp(const MyApp());
 }
