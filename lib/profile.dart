@@ -13,8 +13,22 @@ var myPicture = CircleAvatar(
   ),
 );
 
+class SubTitle extends StatelessWidget {
+  final title;
+  const SubTitle({super.key, required this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      title,
+      style: TextStyle(height: 3, fontSize: 30, fontWeight: FontWeight.w700),
+    );
+  }
+}
+
 class Profile extends StatelessWidget {
   const Profile({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -42,10 +56,7 @@ class Profile extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
-                  Text(
-                    'About Me',
-                    style: TextStyle(height: 3, fontSize: 30, fontWeight: FontWeight.w700),
-                  ),
+                  SubTitle(title: 'About Me'),
                   Text('내용 1'),
                   Text('내용 2'),
                   Text('내용 3'),
@@ -64,10 +75,7 @@ class Profile extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
-                        Text(
-                          'Career',
-                          style: TextStyle(height: 3, fontSize: 30, fontWeight: FontWeight.w700),
-                        ),
+                        SubTitle(title: 'Career'),
                         Text('내용 1'),
                         Text('내용 2'),
                         Text('내용 3'),
@@ -83,10 +91,7 @@ class Profile extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
-                        Text(
-                          'Contact',
-                          style: TextStyle(height: 3, fontSize: 30, fontWeight: FontWeight.w700),
-                        ),
+                        SubTitle(title: 'Contact'),
                         Text('내용 1'),
                         Text('내용 2'),
                         Text('내용 3'),
@@ -103,10 +108,7 @@ class Profile extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
-                  Text(
-                    'Skills',
-                    style: TextStyle(height: 3, fontSize: 30, fontWeight: FontWeight.w700),
-                  ),
+                  SubTitle(title: 'Skills'),
                   Text('내용 1'),
                   Text('내용 2'),
                   Text('내용 3'),
