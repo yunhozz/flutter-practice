@@ -15,7 +15,6 @@ var myPicture = CircleAvatar(
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -40,7 +39,18 @@ class Profile extends StatelessWidget {
               height: 300,
               margin: EdgeInsets.all(10),
               color: Colors.red[100],
-              child: Text('About Me'),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text(
+                    'About Me',
+                    style: TextStyle(height: 3, fontSize: 30, fontWeight: FontWeight.w700),
+                  ),
+                  Text('내용 1'),
+                  Text('내용 2'),
+                  Text('내용 3'),
+                ],
+              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -50,16 +60,38 @@ class Profile extends StatelessWidget {
                   child: Container(
                     height: 300,
                     margin: EdgeInsets.all(10),
-                    color: Colors.green[100],
-                    child: Text('Career'),
+                    color: Colors.blue[100],
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          'Career',
+                          style: TextStyle(height: 3, fontSize: 30, fontWeight: FontWeight.w700),
+                        ),
+                        Text('내용 1'),
+                        Text('내용 2'),
+                        Text('내용 3'),
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(
                   child: Container(
                     height: 300,
                     margin: EdgeInsets.all(10),
-                    color: Colors.blue[100],
-                    child: Text('Contact'),
+                    color: Colors.green[100],
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          'Contact',
+                          style: TextStyle(height: 3, fontSize: 30, fontWeight: FontWeight.w700),
+                        ),
+                        Text('내용 1'),
+                        Text('내용 2'),
+                        Text('내용 3'),
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -68,7 +100,18 @@ class Profile extends StatelessWidget {
               height: 500,
               margin: EdgeInsets.all(10),
               color: Colors.grey,
-              child: Text('Skills'),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text(
+                    'Skills',
+                    style: TextStyle(height: 3, fontSize: 30, fontWeight: FontWeight.w700),
+                  ),
+                  Text('내용 1'),
+                  Text('내용 2'),
+                  Text('내용 3'),
+                ],
+              ),
             ),
           ],
         ),
